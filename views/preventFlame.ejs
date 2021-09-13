@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>불꽃 감지 데이터 출력 화면</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    setInterval(function () {
+      factory()
+    }, 1000)
+
+    function factory() {
+      $.getJSON(
+        '/flame',
+        function (data) {
+          const header = `
+          <table class="fl_table">
+            <thead>
+              <tr>
+                <th>INDEX</th>
+                <th>FLAME</th>
+                <th>TIME</th>
+              </tr>
+            </thead>`
+
+          let body = `<tbody>`
+
+          for (info of data.result) {
+            if (info.flame == '1'){
+              info.flame = 'DETECT'
+            }else{
+              info.flame = '-'
+            }
+            body +=
+              `<tr>
+                <td>${info.id}</td>
+                <td>${info.flame}</td>
+                <td>${info.date}</td>
+              </tr>`
+          }
+
+          let footer = `</tbody></table>`
+          $('#factory').html(header + body + footer)
+        }
+      )
+    }
+  </script>
+</head>
+
+<body>
+  <div onclick="location.href='/'" class="fl_arrow_btn"></div>
+  <div class="big_container">
+    <div class="container" id="factory">
+
+    </div>
+  </div>
+</body>
+
+</html>

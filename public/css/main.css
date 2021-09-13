@@ -1,0 +1,225 @@
+/* *{margin:0; padding:0;} */
+body {
+    background: black;
+}
+.big_container {
+    width: 900px;
+    margin: 0px auto;
+}
+.container {
+    padding-top: 85px;
+    padding-bottom: 85px;
+    text-align:center;
+}
+.left_up {
+    display: inline-block;
+    width: 400px;
+    height: 260px;
+    margin: 5px;
+    padding: 3px;
+}
+.right_up {
+    display: inline-block;
+    width: 400px;
+    height: 260px;
+    margin: 5px;
+    padding: 3px;
+}
+.left_down {
+    display: inline-block;
+    width: 400px;
+    height: 260px;
+    margin: 5px;
+    padding: 3px;
+}
+.right_down {
+    display: inline-block;
+    width: 400px;
+    height: 260px;
+    margin: 5px;
+    padding: 3px;
+}
+
+.btn1 {
+    background-color : black;
+    color: #9ff15b;
+    padding: 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 15px 2px;
+    border-radius: 100%;
+    border-color: #9ff15b;
+    border-width: 10px;
+    border-style: solid;
+}
+.btn2 {
+    background-color : black;
+    color: rgb(250, 163, 65);
+    padding: 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 15px 2px;
+    border-radius: 100%;
+    border-color: rgb(250, 163, 65);
+    border-width: 10px;
+    border-style: solid;
+}
+.btn3 {
+    background-color : black;
+    color: rgb(159, 99, 214);
+    padding: 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 15px 2px;
+    border-radius: 100%;
+    border-color: rgb(159, 99, 214);
+    border-width: 10px;
+    border-style: solid;
+}
+.btn4 {
+    background-color : black;
+    color: #6e84e7;
+    padding: 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 15px 2px;
+    border-radius: 100%;
+    border-color: #6e84e7;
+    border-width: 10px;
+    border-style: solid;
+}
+.btn1:hover {
+    background-color: #c3f09e;
+    color: white;
+}
+.btn2:hover {
+    background-color: rgb(235, 196, 151);
+    color: white;
+}
+.btn3:hover {
+    background-color: rgb(206, 169, 240);
+    color: white;
+}
+.btn4:hover {
+    background-color: #aab6ee;
+    color: white;
+}
+.txt1 {
+    text-decoration: none; 
+    color: #9ff15b;
+    font-size: 20px;
+}
+.txt2 {
+    text-decoration: none; 
+    color: rgb(250, 163, 65);
+    font-size: 20px;
+}
+.txt3 {
+    text-decoration: none; 
+    color: rgb(159, 99, 214);
+    font-size: 20px;
+}
+.txt4 {
+    text-decoration: none; 
+    color: #6e84e7;
+    font-size: 20px;
+}
+.th_table {
+    width: 900px;
+    border-top: 2px solid #9ff15b;
+    border-bottom: 2px solid #9ff15b;
+    border-collapse: collapse;
+}
+.fl_table {
+    width: 900px;
+    border-top: 2px solid rgb(250, 163, 65);
+    border-bottom: 2px solid rgb(250, 163, 65);
+    border-collapse: collapse;
+}
+.th_table th{
+    border-bottom: 2px solid #9ff15b;
+    padding: 10px;
+    text-align: center;
+    color: white;
+} 
+.fl_table th{
+    border-bottom: 2px solid rgb(250, 163, 65);
+    padding: 10px;
+    text-align: center;
+    color: white;
+} 
+td {
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+.th_table tbody tr:nth-child(2n+1){
+    background-color: #4a614a;
+}
+.fl_table tbody tr:nth-child(2n+1){
+    background-color: rgb(170, 119, 61);
+}
+.th_arrow_btn{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    margin-left: 20px;
+}
+.th_arrow_btn::before{
+    content: "";
+    display: block;
+    position: relative;
+    top: 20px;
+    left: 10px;
+    width: 30px;
+    height: 10px;
+    background-color: #9ff15b;
+}
+.th_arrow_btn::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    border: 15px solid transparent;
+    border-right-color: #9ff15b;
+    width: 0;
+    height: 0;
+}
+.fl_arrow_btn{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    margin-left: 20px;
+}
+.fl_arrow_btn::before{
+    content: "";
+    display: block;
+    position: relative;
+    top: 20px;
+    left: 10px;
+    width: 30px;
+    height: 10px;
+    background-color: rgb(250, 163, 65);
+}
+.fl_arrow_btn::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    border: 15px solid transparent;
+    border-right-color: rgb(250, 163, 65);
+    width: 0;
+    height: 0;
+}

@@ -1,0 +1,24 @@
+{
+  "name": "factory",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "localStorage": "^1.0.4",
+    "moment": "^2.29.1",
+    "mysql2": "^2.3.0",
+    "node-localstorage": "^2.2.1",
+    "nodemon": "^2.0.12",
+    "serialport": "^9.2.0",
+    "vue": "^2.6.14"
+  }
+}

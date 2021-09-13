@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main Page</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+
+    $(document).ready(function () {
+      // localStorage.clear();
+      if (localStorage.length <= 0) {
+        localStorage.setItem('btn1_state', 'OFF');
+        sessionStorage.setItem('btn2_state', 'OFF');
+        localStorage.setItem('btn3_state', 'OFF');
+        localStorage.setItem('btn4_state', 'OFF');
+      }
+
+
+      $('#1').html(localStorage.getItem('btn1_state'))
+      $('#2').html(sessionStorage.getItem('btn2_state'))
+      $('#3').html(localStorage.getItem('btn3_state'))
+      $('#4').html(localStorage.getItem('btn4_state'))
+
+
+      $('button').click(function () {
+        if ($(this).html() == 'ON') {
+          $(this).html('OFF')
+        } else if ($(this).html() == 'OFF') {
+          $(this).html('ON')
+        }
+      })
+
+
+      $('#1').click(function () {
+        $.get("/datas/" + $(this).attr('id'), function (data, status) { });
+        localStorage.setItem('btn1_state', $(this).html());
+      })
+      $('#2').click(function () {
+        $.get("/datas/" + $(this).attr('id'), function (data, status) { });
+        sessionStorage.setItem('btn2_state', $(this).html());
+      })
+      $('#3').click(function () {
+        $.get("/controller/" + $(this).attr('id'), function (data, status) { });
+        localStorage.setItem('btn3_state', $(this).html());
+      })
+      $('#4').click(function () {
+        $.get("/controller/" + $(this).attr('id'), function (data, status) { });
+        localStorage.setItem('btn4_state', $(this).html());
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <div class="big_container">
+    <div class="container">
+      <div class="left_up">
+        <button id='1' class="btn1"></button><br>
+        <a href="/tempAndHumi" class="txt1">TEMP/HUMI SENSOR</a>
+      </div>
+      <div class="right_up">
+        <button id='2' class="btn2"></button><br>
+        <a href="/preventFlame" class="txt2">FLAME SENSOR</a>
+      </div>
+      <div class="left_down">
+        <button id='3' class="btn3"></button><br>
+        <a class="txt3">FACILITY</a>
+      </div>
+      <div class="right_down">
+        <button id='4' class="btn4"></button><br>
+        <a class="txt4">SPRINKLER</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

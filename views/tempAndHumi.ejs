@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>온/습도 데이터 출력 화면</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    setInterval(function () {
+      factory()
+    }, 1000)
+
+    function factory() {
+      $.getJSON(
+        '/tempHumi',
+        function (data) {
+          const header = `
+          <table class="th_table">
+            <thead>
+              <tr>
+                <th>INDEX</th>
+                <th>TEMPERATURE</th>
+                <th>HUMIDITY</th>
+                <th>TIME</th>
+              </tr>
+            </thead>`
+
+          let body = `<tbody>`
+
+          for (info of data.result) {
+            body +=
+              `<tr>
+                <td>${info.id}</td>
+                <td>${info.temp}℃</td>
+                <td>${info.humi}%</td>
+                <td>${info.date}</td>
+              </tr>`
+          }
+
+          let footer = `</tbody></table>`
+          $('#factory').html(header + body + footer)
+        }
+      )
+    }
+  </script>
+</head>
+
+<body>
+  <div onclick="location.href='/'" class="th_arrow_btn">
+  </div>
+  <div class="big_container">
+    <div class="container" id="factory">
+ 
+    </div>
+  </div>
+</body>
+
+</html>
